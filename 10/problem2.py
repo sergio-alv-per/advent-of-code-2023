@@ -1,14 +1,7 @@
 from sys import stdin
 
 def make_readable(line):
-    line = line.replace("L", "└")
-    line = line.replace("J", "┘")
-    line = line.replace("F", "┌")
-    line = line.replace("7", "┐")
-    line = line.replace("|", "│")
-    line = line.replace("-", "─")
-    line = line.replace(".", " ")
-    line = line.replace("S", "●")
+    line = line.translate(str.maketrans("LJF7|-.S", "└┘┌┐│─·●"))
     return line
 
 def find_start(diagram):
