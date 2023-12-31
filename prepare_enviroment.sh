@@ -1,6 +1,10 @@
 #! /bin/bash
 
-DAY=$(date +%d)
+if [ $# -eq 0 ]; then
+    DAY=$(date +%d)
+else
+    DAY=$1
+fi
 
 source ./aoc_venv/bin/activate
 
@@ -14,5 +18,5 @@ else
     touch $DAY/problem1.py
     touch $DAY/problem2.py
 
-    aocd > $DAY/input.txt
+    aocd $DAY > $DAY/input.txt
 fi
